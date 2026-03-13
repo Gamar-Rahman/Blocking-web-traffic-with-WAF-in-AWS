@@ -1,0 +1,27 @@
+webserver-A
+
+#!/bin/bash
+sudo su
+dnf update -y
+dnf install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "Response coming from server A" > /var/www/html/index.html
+
+
+###############
+
+
+webserver-B
+
+#!/bin/bash
+sudo su
+dnf update -y
+dnf install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "Response coming from server B" > /var/www/html/index.html     
+
+
+
+
